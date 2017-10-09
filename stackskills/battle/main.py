@@ -2,14 +2,37 @@ from classes.game import Person, bcolors
 from classes.magic import Spell
 from classes.inventory import Item
 
+
+block = u'\u2588'
+
+print '\n\n'
+print 'NAME                HP                                    MP'
+print '                    _________________________             __________'
+print bcolors.BOLD + 'Valos:    460/460  |' + \
+      bcolors.OKGREEN + block + block + '                        '+ \
+      bcolors.ENDC + bcolors.BOLD + '|' + '      65/65 |' + \
+      bcolors.OKBLUE + block + '          |' + bcolors.ENDC
+
+# ======================= MAGIC =======================
+
+# CREATE BLACK MAGIC
+
 fire = Spell('fire', 10, 100, 'black')
 thunder = Spell('thunder', 10, 124, 'black')
 blizzard = Spell('blizzard', 10, 100, 'black')
 meteor = Spell('meteor', 10, 150, 'black')
 quake = Spell('quake', 10, 160, 'black')
 
+
+# CREATE WHITE MAGIC
+
 cure = Spell('cure', 12, 120, 'white')
 cura = Spell('cura', 18, 200, 'white')
+
+
+# ======================= ITEMS =======================
+
+# CREATE POTION ITEMS
 
 potion = Item('Potion', 'potion', 'heals 50 HP', 50)
 hipotion = Item('Hi-Potion', 'potion', 'heals 100 HP', 100)
@@ -17,10 +40,15 @@ superpotion = Item('Super Potion', 'potion', 'heals 500 HP', 500)
 elixir = Item('Elixir', 'elixir', 'fully restores HP/MP of one party member', 9999)
 megaelixir = Item('Mega Elixir', 'elixir', 'fully restores party\'s HP/MP', 9999)
 
+
+# CREATE ATTACK ITEMS
+
 grenade = Item('Grenade', 'attack', 'deals 500 damage', 500)
 
-# INSTANTIATE THE PERSON CLASS WITH HP, MAGIC POINTS, ATTACK POWER,
-# DEFENSE POWER AND MAGIC SPELL
+# =====================================================
+
+# INSTANTIATE THE PERSON CLASS WITH HP, MAGIC POINTS,
+# ATTACK POWER, DEFENSE POWER, MAGIC & ITEMS
 
 player_magic = [fire, thunder, blizzard, cure, cura]
 player_items = [{'item': grenade, 'qt': 5}, {'item': potion, 'qt': 5},
